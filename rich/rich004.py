@@ -1,3 +1,14 @@
+print(int.__doc__)
+print("______________________________________________________")
+print(int.__dict__)
+print("______________________________________________________")
+from rich import print
+print(int.__dict__)
+
+print("______________________________________________________")
+from rich import inspect
+inspect(int, all=True)
+
 class ContaBancaria:
     """
     Cria uma conta bancária e permite fazer saques e depósitos
@@ -24,13 +35,5 @@ class ContaBancaria:
             print(f"Saque NEGADO ! \n"
                   f"Saldo insuficiente para o saque no valor de R${valor:,.2f}")
 
-c1 = ContaBancaria(112, "Dayana", 40000)
-c1.depositar(500)
-c1.sacar(404909)
-print(c1)
-
-c2 = ContaBancaria(115, "Carolina", 4000)
-
-
-
-
+c = ContaBancaria(111, "José Antônio", 450)
+inspect(c)
